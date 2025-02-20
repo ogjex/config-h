@@ -41,8 +41,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      		instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     		NULL,       NULL,       0,            1,           -1 },
+	/* class      		instance	title		tags mask     isfloating   monitor */
+	{ "Gimp",     		NULL,		NULL,		0,		1,         -1 },
+	{ "Soffice",		"soffice",	NULL,		0,		0,         0 },	
+	{ "Soffice",		"soffice",	"Presenting: ",	0,		0,         1 },	
 	{ NULL,			NULL,       "Quick Access — 1Password",       0,            1,           -1 },
 	/*{ "1Password",	  	NULL,       "Quick Access — 1Password",       0,            1,           -1 },*/
 	{ NULL,			NULL,       "Quick Format Citation",       0,            1,           -1 },

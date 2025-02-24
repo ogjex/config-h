@@ -52,6 +52,7 @@ static const Rule rules[] = {
 	{ "Brave-browser",  	NULL,       NULL,       1 << 2,       0,           -1 },
 	/* 4 - writing*/	
 	{ "obsidian",	  	NULL,       NULL,       1 << 3,       0,           -1 },
+	{ "Zotero",		"Zotero",   "Quick Format Citation",	1 << 3,	0,         -1 },	
 	/* 5 - Reference management */	
 	{ "Zotero",	  	NULL,       NULL,       1 << 4,       0,           -1 },
 	/* 6 - development, */	

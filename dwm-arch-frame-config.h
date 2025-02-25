@@ -43,12 +43,9 @@ static const Rule rules[] = {
 	 */
 	/* class      		instance	title		tags mask     isfloating   monitor */
 	{ "Gimp",     		NULL,		NULL,		0,		1,         -1 },
-	{ "Dragon-drop",	"dragon-drop",	NULL,		0,		1,         -1 },	
+	{ "Dragon-drop",	"dragon-drop",	NULL,		0,		0,         -1 },	
 	{ "Soffice",		"soffice",	NULL,		0,		0,         0 },	
 	{ "Soffice",		"soffice",	"Presenting: ",	0,		0,         1 },	
-	{ NULL,			NULL,       "Quick Access — 1Password",       0,            1,           -1 },
-	/*{ "1Password",	  	NULL,       "Quick Access — 1Password",       0,            1,           -1 },*/
-	{ NULL,			NULL,       "Quick Format Citation",       0,            1,           -1 },
 	/* 1 - terminal and system tools */	
 	/* 2 - browsing */	
 	{ "firefox",  		NULL,       NULL,       1 << 1,       0,           -1 },
@@ -63,8 +60,6 @@ static const Rule rules[] = {
 	/* 7 - Virtual Machines */	
 	/* 8 - unused */	
 	/* 9 - background apps with helpers */	
-	{ "1Password",	  	NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "1Password",	  	NULL,       "Lock Screen - 1Password",       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */

@@ -34,20 +34,20 @@ static const char *const autostart[] = {
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 static const char *tagsalt[] = { "", "󰖟", "󰻣", "󱓩", "󱍻", "󰚗", "", "󰄯", "󰄯" };
 static const int momentaryalttags = 1; /* 1 means alttags will show only when key is held down*/
-static const int taglayouts[] = { 0, 1, 1, 0, 0, 0, 0, 0, 0 };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      		instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     		NULL,       NULL,       0,            1,           -1 },
+	/* class      		instance	title		tags mask     isfloating   monitor */
+	{ "Gimp",     		NULL,		NULL,		0,		1,         -1 },
+	{ "Dragon-drop",	"dragon-drop",	NULL,		0,		0,         -1 },	
 	{ "Soffice",		"soffice",	NULL,		0,		0,         0 },	
 	{ "Soffice",		"soffice",	"Presenting: ",	0,		0,         1 },	
 	/* 1 - terminal and system tools */	
 	/* 2 - browsing */	
-	{ "firefox",  		NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "qutebrowser",  		NULL,       NULL,       1 << 1,       0,           -1 },
 	/* 3 - email*/	
 	{ "Brave-browser",  	NULL,       NULL,       1 << 2,       0,           -1 },
 	/* 4 - writing*/	
@@ -59,8 +59,6 @@ static const Rule rules[] = {
 	/* 7 - Virtual Machines */	
 	/* 8 - unused */	
 	/* 9 - background apps with helpers */	
-	{ "1password",	  	NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "1password",	  	NULL,       "Lock Screen - 1Password",       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -73,6 +71,7 @@ static int attachbelow 		= 1;    /* 1 means attach after the currently active wi
 #define FORCE_VSPLIT 1  /* nrowgrid layout: force two clients to always split vertically */
 #include "vanitygaps.c"
 
+static const int taglayouts[] = { 2, 2, 1, 0, 0, 0, 0, 0, 0 };
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "MM:",      tilewide },/* 0 - first entry is default */
@@ -114,7 +113,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *copycmd[]  = { "dmenu_cliphist", "add", NULL };
 static const char *cliphistcmd[]  = { "dmenu_cliphist", "sel", NULL };
 static const char *devcmd[]  = { "zellij", NULL };
-static const char *browsecmd[]  = { "firefox", NULL };
+static const char *browsecmd[]  = { "qutebrowser", NULL };
 static const char *coordcmd[]  = { "brave-browser", NULL };
 static const char *notecmd[]  = { "obsidian", NULL };
 static const char *refcmd[]  = { "zotero", NULL };

@@ -109,9 +109,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
-static const char *copycmd[]  = { "dmenu_cliphist", "add", NULL };
-static const char *pastecmd[]  = { "xclip", "-o", NULL };
-static const char *cliphistcmd[]  = { "dmenu_cliphist", "sel", NULL };
+static const char *copycmd[]  = { "dmenu-cliphist", "add", NULL };
+static const char *pastecmd[]  = { "dmenu-cliphist", "paste", NULL };
+static const char *cliphistcmd[]  = { "dmenu-cliphist", "sel", NULL };
 static const char *devcmd[]  = { "zellij", NULL };
 static const char *browsecmd[]  = { "qutebrowser", NULL };
 static const char *coordcmd[]  = { "brave", NULL };

@@ -47,7 +47,7 @@ static const Rule rules[] = {
 	{ "Soffice",		"soffice",	"Presenting: ",	0,		0,         1 },	
 	/* 1 - terminal and system tools */	
 	/* 2 - browsing */	
-	{ "qutebrowser",  		NULL,       NULL,       1 << 1,       0,           -1 },
+	{ "qutebrowser",  		NULL,       NULL,       1 << 2,       0,           -1 },
 	/* 3 - email*/	
 	{ "Brave-browser",  	NULL,       NULL,       1 << 2,       0,           -1 },
 	/* 4 - writing*/	
@@ -110,9 +110,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-l", "5", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
-static const char *copycmd[]  = { "dmenu-cliphist", "add_to_clipboard", NULL };
-static const char *pastecmd[]  = { "dmenu-cliphist", "paste_recent", NULL };
-static const char *cliphistcmd[]  = { "dmenu-cliphist", "select_from_clipboard", NULL };
+static const char *copycmd[]  = { "dmenu-cliphist", "add", NULL };
+static const char *copyvicmd[]  = { "dmenu-cliphist", "out", NULL };
+static const char *cliphistcmd[]  = { "dmenu-cliphist", "sel", NULL };
 static const char *devcmd[]  = { "zellij", NULL };
 static const char *browsecmd[]  = { "qutebrowser", NULL };
 static const char *coordcmd[]  = { "brave", NULL };
@@ -132,8 +132,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_c,      spawn,          {.v = copycmd } },
-	{ MODKEY,			XK_v,      spawn,          {.v = pastecmd } },
-	{ MODKEY|ShiftMask,		XK_c,      spawn,          {.v = cliphistcmd } },
+	{ MODKEY|ShiftMask,		XK_c,      spawn,          {.v = copyvicmd } },
+	{ MODKEY|ShiftMask,		XK_v,      spawn,          {.v = cliphistcmd } },
 	{ MODKEY|ShiftMask,		XK_F1,     spawn,          {.v = devcmd } },
 	{ MODKEY|ShiftMask,	        XK_F2,     spawn,          {.v = browsecmd } },
 	{ MODKEY|ShiftMask,	        XK_F3,     spawn,          {.v = coordcmd } },

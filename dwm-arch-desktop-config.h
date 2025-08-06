@@ -42,7 +42,7 @@ static const Rule rules[] = {
 	 */
 	/* class      		instance	title		tags mask     isfloating   monitor */
 	{ "Gimp",     		NULL,		NULL,		0,		1,         -1 },
-	{ "Dragon-drop",	"dragon-drop",	NULL,		0,		0,         -1 },	
+	{ NULL,			NULL,		"dragon",	0,		1,         -1 },	
 	{ "Soffice",		"soffice",	NULL,		0,		0,         0 },	
 	{ "Soffice",		"soffice",	"Presenting: ",	0,		0,         1 },	
 	/* 1 - terminal and system tools */	
@@ -113,6 +113,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *copycmd[]  = { "dmenu-cliphist", "add", NULL };
 static const char *pastecmd[]  = { "dmenu-cliphist", "paste", NULL };
 static const char *cliphistcmd[]  = { "dmenu-cliphist", "sel", NULL };
+static const char *screenshotcmd[]  = { "screengrab", NULL };
 static const char *devcmd[]  = { "zellij", NULL };
 static const char *browsecmd[]  = { "qutebrowser", NULL };
 static const char *coordcmd[]  = { "brave", NULL };
@@ -136,6 +137,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_F7,     spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_F8,     spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,		XK_F9,     spawn,          {.v = pwcmd } },
+	{ MODKEY,			XK_s,	   spawn,          {.v = screenshotcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_b,	   toggleAttachBelow, {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
